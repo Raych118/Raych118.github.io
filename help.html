@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+					<li class="nav-item active">
+					    <a class="nav-link" href="help.html">Help<span class ="sr-only">(current)</span></a>
+					</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>    
+    </head>
+<body>
+    <nav class="navbar-nav navbar-expand-lg navbar-dark bg-dark" id="panel">
+            <a class="navbar-brand" href="#">
+                <img src="images/icon3.jpg" alt="site logo" width="100" height="100">
+                RACHEL'S STORE
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                </ul>
+                
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Find .." aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+    </nav>
+	
+	<div class="box">
+	<form method="post" action="help.html" name="myForm" onsubmit="return validateForm()">
+		<span class="text-center">Ask A Question</span>
+	<div class="input-container">
+		<input type="text"/ name="fullName" id="fullName">
+		<label>Full Name</label>		
+	</div>
+	<div class="input-container">
+		<input type="number"/ name="num" id="num" >
+		<label>Number</label>		
+	</div>
+	<div class="input-container">		
+		<input type="email" name="EM" id="EM" />
+		<label>Email</label>
+	</div>
+	<div class="input-container">
+		<textarea name= "enquiry" id="enquiry" placeholder="Enquiry"></textarea>
+				
+	</div>
+		 <div class="title">
+             <button class ="btn btn-outline-primary" input type="submit" value="Submit" />Submit Query</button>
+        </div>
+</form>	
+</div>
+
+	<footer class = "footer">
+      
+    Fashion Inc<br/>
+    Rachel's Store, Inc. 280 Vermont Street, London, rachelmakwara@gmail.com,  +263774987675
+</footer>
+
+<script>
+function validateForm(){
+  var fullName = document.forms["myForm"]["fullName"].value;
+  var num = document.forms["myForm"]["num"].value;
+  var enquiry = document.forms["myForm"]["enquiry"].value;
+  var EM= document.forms["myForm"]["EM"].value;
+  var re = /^[A-Za-z]+$/;
+  var e= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ 
+   if(num == null || num ==""){
+  alert("Phone number needed");
+  document.getElementById("num").style.borderColor="red";
+  return false;
+  } 
+  
+   if(num.match(re) || num.length < 10){
+  alert("Error: Invalid characters");
+  document.getElementById("num").style.borderColor="red";
+  return false;
+  } 
+  
+   if( EM == null || EM == ""){
+  alert("Email address needed");
+  document.getElementById("EM").style.borderColor="red";
+  return false;
+  } 
+  
+   if(num.match(e)){
+  alert("input correct");
+  
+  return false;
+  } 
+  
+   if(enquiry == null || enquiry ==""){
+  alert("please type enquiry");
+  document.getElementById("enquiry").style.borderColor="red";
+  return false;
+  } 
+  
+  
+   if(fullName == null || fullName ==""){
+  alert("first name needed");
+  document.getElementById("fullName").style.borderColor="red";
+  return false;
+  } 
+  
+  if(fullName.match(re)){
+  alert(" Enquiry successful");
+  return true;}
+  else
+  { alert("Error: Invalid Input");
+   document.getElementById("fullName").style.borderColor="red";
+  return false;
+  }
+  
+  
+  
+  }
+  </script>
+</body>
+
+</html>
