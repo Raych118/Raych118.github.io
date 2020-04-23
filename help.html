@@ -132,7 +132,11 @@ function validateForm(){
   
   if(fullName.match(re)){
   alert(" Enquiry successful");
-  return true;}
+	  document.getElementById('fullName').reset();
+	  document.getElementById('enquiry').reset();
+	  document.getElementById('EM').reset();
+	  document.getElementById('num').reset();
+  return false;}
   else
   { alert("Error: Invalid Input");
    document.getElementById("fullName").style.borderColor="red";
